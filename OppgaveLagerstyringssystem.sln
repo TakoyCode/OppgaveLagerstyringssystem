@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OppgaveLagerstyringssystem", "OppgaveLagerstyringssystem\OppgaveLagerstyringssystem.csproj", "{B08FFCA1-E226-4BF9-801D-4D523FE82E1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B08FFCA1-E226-4BF9-801D-4D523FE82E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B08FFCA1-E226-4BF9-801D-4D523FE82E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B08FFCA1-E226-4BF9-801D-4D523FE82E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B08FFCA1-E226-4BF9-801D-4D523FE82E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {852A394F-E9BA-48BB-84AF-702DA6B28E0E}
+	EndGlobalSection
+EndGlobal
