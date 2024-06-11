@@ -6,12 +6,7 @@
 
         public Storage()
         {
-            _products =
-                [
-                    new Food("Apple", 5.99, 20, 12,2026),
-                    new Electronic("Dell keyboard", 538, 6),
-                    new Clothes("t-shirt", 269.77, "M"),
-                ];
+            _products = new List<IProduct>();
         }
 
         public void AddProduct(IProduct product)
@@ -23,6 +18,18 @@
         {
             // Fjerner det første produktet som er lik "product"
             _products.Remove(product);
+        }
+
+        public IProduct? GetProductByName(string name)
+        {
+            foreach (var product in _products)
+            {
+                if (product.Name == name)
+                {
+                    return product;
+                }
+            }
+            return null;
         }
 
         public void ShowProducts()
