@@ -1,4 +1,6 @@
-﻿namespace OppgaveLagerstyringssystem
+﻿using System.Drawing;
+
+namespace OppgaveLagerstyringssystem
 {
     internal class Food : IProduct
     {
@@ -15,7 +17,13 @@
 
         public void PrintOutInfo()
         {
-            Console.WriteLine($"Name: {Name}            Price: {Price}      Expiration Date: {ExpirationDate.getDateAsString()}");
+            var nameInfo = $"Name: {Name}";
+            var priceInfo = $"Price: {Price}";
+            var expirationDateInfo = $"Expiration Date: {ExpirationDate.getDateAsString()}";
+            var padLength = 30;
+            Console.WriteLine(nameInfo + new string(' ', padLength - nameInfo.Length) +
+                              priceInfo + new string(' ', padLength - priceInfo.Length) +
+                              expirationDateInfo);
         }
     }
 }

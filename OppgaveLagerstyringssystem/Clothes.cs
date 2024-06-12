@@ -15,7 +15,14 @@
 
         public void PrintOutInfo()
         {
-            Console.WriteLine($"Name: {Name}          Price: {Price}    Size: {Size}");
+            var nameInfo = $"Name: {Name}";
+            var priceInfo = $"Price: {Price}";
+            var sizeInfo = $"Size: {Size}";
+            var padLength = 30;
+            Console.WriteLine(nameInfo + new string(' ', padLength - nameInfo.Length) +
+                              priceInfo + new string(' ', padLength - priceInfo.Length) +
+                              sizeInfo);
+
         }
     }
 }
