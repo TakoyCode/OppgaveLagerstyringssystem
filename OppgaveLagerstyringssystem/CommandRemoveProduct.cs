@@ -18,7 +18,14 @@
            if(foundProduct != null)
            {
                _storage.RemoveProduct(foundProduct);
+               Console.WriteLine($"Removed product {foundProduct.Name} from storage");
+               Thread.Sleep(800);
            }
+           else
+           {
+               Console.WriteLine($"Couldn't find the product you tried remove, please try again.");
+                Console.ReadKey(true);
+            }
         }
     }
 }

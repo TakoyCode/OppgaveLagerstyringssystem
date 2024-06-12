@@ -16,11 +16,12 @@
 
            while (true)
            {
+               Console.Clear();
                commands.Show();
                var userInput = Console.ReadKey().KeyChar;
+               Console.WriteLine();
                commands.Run(userInput);
            }
         }
-
     }
 }

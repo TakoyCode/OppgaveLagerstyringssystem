@@ -14,6 +14,7 @@
         public void Run()
         {
             _storage.ShowProducts();
+            Console.ReadKey(true);
         }
     }
 }

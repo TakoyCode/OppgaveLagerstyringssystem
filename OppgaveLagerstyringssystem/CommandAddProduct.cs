@@ -27,35 +27,98 @@
             Console.WriteLine("2) Food");
             Console.WriteLine("3) Clothes");
 
-            var UserInput = Console.ReadLine();
-            if (UserInput == "1")
+            var UserInput = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+            if (UserInput == '1')
             {
-                var name = Console.ReadLine();
-                var price = Convert.ToDouble(Console.ReadLine());
-                var warranyInMonths = Convert.ToInt32(Console.ReadLine());
-
-                return new Electronic(name, price, warranyInMonths);
+                return MakeElectronic();
             } 
-            else if (UserInput == "2")
+            else if (UserInput == '2')
             {
-                var name = Console.ReadLine();
-                var price = Convert.ToDouble(Console.ReadLine());
-                var day = Convert.ToInt32(Console.ReadLine());
-                var month = Convert.ToInt32(Console.ReadLine());
-                var year = Convert.ToInt32(Console.ReadLine());
-
-                return new Food(name, price, day, month, year);
+                return MakeFood();
             } 
-            else if (UserInput == "3")
+            else if (UserInput == '3')
             {
-                var name = Console.ReadLine();
-                var price = Convert.ToDouble(Console.ReadLine());
-                var size = Console.ReadLine();
-
-                return new Clothes(name, price, size);
+                return MakeClothes();
             }
             return null;
         }
 
+        private IProduct MakeClothes()
+        {
+            Console.WriteLine("What name would you like the product to have?");
+            var name = Console.ReadLine();
+            Console.WriteLine("What price would you like the product to have?");
+            if (!Double.TryParse(Console.ReadLine(), out double price))
+            {
+                ErrorMessage();
+                return null;
+            }
+            Console.WriteLine("What size would you like the product to have?");
+            var size = Console.ReadLine();
+
+            return new Clothes(name, price, size);
+        }
+
+        private IProduct MakeFood()
+        {
+            Console.WriteLine("What name would you like the product to have?");
+            var name = Console.ReadLine();
+            Console.WriteLine("What price would you like the product to have?");
+            if (!Double.TryParse(Console.ReadLine(), out double price))
+            {
+                ErrorMessage();
+                return null;
+            }
+                
+            Console.WriteLine("Which year does the product expire?");
+            if (!Int32.TryParse(Console.ReadLine(), out int year))
+            {
+                ErrorMessage();
+                return null;
+            }
+            Console.WriteLine("Which month does the product expire?");
+            if (!Int32.TryParse(Console.ReadLine(), out int month))
+            {
+                ErrorMessage();
+                return null;
+            }
+            Console.WriteLine("Which day does the product expire?");
+            if (!Int32.TryParse(Console.ReadLine(), out int day))
+            {
+                ErrorMessage();
+                return null;
+            }
+
+            return new Food(name, price, day, month, year);
+        }
+
+        private IProduct MakeElectronic()
+        {
+            Console.WriteLine("What name would you like the product to have?");
+            var name = Console.ReadLine();
+
+            Console.WriteLine("What price would you like the product to have?");
+            if (!Double.TryParse(Console.ReadLine(), out double price))
+            {
+                ErrorMessage();
+                return null;
+            }
+
+            Console.WriteLine("Write the how many months the warranty lasts");
+            if (!Int32.TryParse(Console.ReadLine(), out int warrantyInMonths))
+            {
+                ErrorMessage();
+                return null;
+            }
+
+            return new Electronic(name, price, warrantyInMonths);
+        }
+
+        private void ErrorMessage()
+        {
+            Console.WriteLine("Something went wrong, please try again");
+            Thread.Sleep(800);
+        }
     }
 }
